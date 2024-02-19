@@ -6,16 +6,19 @@ const openai = new OpenAI();
 
 export default class GptController {
 
-    public async createRequest(req: Request, res: Response): Promise<void> {
+    public async createRequest(req: Request, res: Response): Promise<Response> {
         try {
+            const {message} = req.body;
+            if (!message) return res.status(400).send({error: "Message is required"});
+
             const completion = await openai.chat.completions.create({
-                messages: [{ role: gptConfig.role, content: "Translate the following English text to French: 'Hello, how are you?'" }],
+                messages: [{ role: gptConfig.role, content: message }],
                 model: gptConfig.model,
             });
 
-            res.status(200).send(completion.choices);
+            return res.status(200).send(completion.choices);
         } catch (error) {
-            res.status(400).send(error);
+            return res.status(500).send(error);
         }
     }
 }
