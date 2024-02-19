@@ -1,6 +1,5 @@
 import express from "express";
 
-import './config/db';
 import appRouter from "./api/v1/app.route";
 import cors from "cors";
 
