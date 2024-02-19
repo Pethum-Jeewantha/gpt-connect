@@ -1,7 +1,7 @@
 import express from "express";
 
 import './config/db';
-// import appRouter from "./api/v1/app.route";
+import appRouter from "./api/v1/app.route";
 import cors from "cors";
 
 class App {
@@ -18,7 +18,7 @@ class App {
     }
 
     private setAppRoutes(): void {
-        // this.express.use("/api/v1", appRouter);
+        this.express.use("/api/v1", appRouter);
     }
 }
 
