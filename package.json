@@ -1,0 +1,13 @@
+{
+  "name": "gpt-connect",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "build": "tsc",
+    "start": "node dist/app.js",
+    "dev": "ts-node-dev --respawn --transpile-only ./index.ts"
+  },
+  "author": "Pethum Jeewantha",
+  "license": "ISC"
+}
