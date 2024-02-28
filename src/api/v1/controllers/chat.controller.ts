@@ -1,10 +1,7 @@
 import {Request, Response} from "express";
-import OpenAI from "openai";
-import {gptConfig} from "../../../config/constant";
+import {gptConfig, openai} from "../../../config/constant";
 
-const openai = new OpenAI();
-
-export default class GptController {
+export default class ChatController {
 
     public async createRequest(req: Request, res: Response): Promise<Response> {
         try {
@@ -13,6 +10,7 @@ export default class GptController {
 
             const completion = await openai.chat.completions.create({
                 messages: [{ role: gptConfig.role, content: message }],
+                response_format: {type: "json_object"},
                 model: gptConfig.model,
             });
 

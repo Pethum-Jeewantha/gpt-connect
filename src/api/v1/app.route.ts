@@ -1,8 +1,8 @@
 import {Router} from "express";
-import gptRoute from "./routes/gpt.route";
+import chatRoute from "./routes/chat.route";
 
 const appRouter: Router = Router();
 
-appRouter.use("/gpt", gptRoute);
+appRouter.use("/chat", chatRoute);
 
 export default appRouter;
