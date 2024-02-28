@@ -9,7 +9,7 @@ export default class ChatController {
             if (!message) return res.status(400).send({error: "Message is required"});
 
             const completion = await openai.chat.completions.create({
-                messages: [{ role: gptConfig.role, content: message }],
+                messages: [{ role: gptConfig.role, content: `${message} in json type` }],
                 response_format: {type: "json_object"},
                 model: gptConfig.model,
             });

@@ -1,5 +1,7 @@
 import OpenAI from "openai";
 
+export const port = process.env.PORT || 3100;
+
 interface GptConfigInterface {
     model: string,
     role: "system"
