@@ -1,0 +1,6 @@
+version: 1.0
+endpoints:
+  - name: GPT Connect
+    port: 3100
+    type: REST
+    networkVisibility: Public
