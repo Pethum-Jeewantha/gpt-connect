@@ -3,4 +3,4 @@ endpoints:
   - name: GPT Connect
     port: 3100
     type: REST
-    networkVisibility: Project
+    networkVisibility: Public
