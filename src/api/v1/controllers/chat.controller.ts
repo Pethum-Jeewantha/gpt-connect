@@ -11,6 +11,7 @@ export default class ChatController {
             const completion = await openai.chat.completions.create({
                 messages: [{ role: gptConfig.role, content: `${message} in json type` }],
                 response_format: {type: "json_object"},
+                max_tokens: gptConfig.max_tokens,
                 model: gptConfig.model,
             });
 
